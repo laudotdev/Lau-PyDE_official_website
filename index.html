@@ -402,9 +402,9 @@ Created: September 28, 2026
                         <label for="windowsVersion">Release version</label>
                         <div class="select-wrap">
                             <select id="windowsVersion" class="version-select">
-                                <option value="1.0.0" selected>v1.0.0 (Latest)</option>
+                                <option value="1.0.0">v1.0.0 (Old)</option>
                                 <!-- FUTURE RELEASE: when v1.1.0 is published, remove "disabled" and "(Coming soon)", then uncomment its release-panel below -->
-                                <option value="1.1.0" disabled>v1.1.0 (Coming soon)</option>
+                                <option value="1.1.0" selected>v1.1.0 (Latest)</option>
                                 <!-- FUTURE RELEASE: same for v1.2.0 (copy the v1.1.0 release-panel and change the version + file path) -->
                                 <option value="1.2.0" disabled>v1.2.0 (Coming soon)</option>
                             </select>
@@ -438,7 +438,24 @@ Created: September 28, 2026
                         </div>
                     </div>
 
-                    <!-- FUTURE RELEASE TEMPLATE (Windows): uncomment, then edit the version and the installer path
+                    <div class="release-panel" data-version="1.1.0">
+                        <div class="download-card">
+                            <div class="download-icon">
+                                <i class="fab fa-windows"></i>
+                            </div>
+                            <h3>Lau-PyDE for Windows</h3>
+                            <span class="version-badge">v1.1.0</span>
+                            <p class="file-type">.exe installer</p>
+                            <a href="installer/windows/v1.1.0/Lau-PyDE-Setup-v1.1.0.exe" class="btn btn-primary" download>
+                                <i class="fas fa-download"></i>
+                                <span>Download Now</span>
+                            </a>
+                        </div>
+                    </div>
+                   
+                </div>
+
+                <!-- FUTURE RELEASE TEMPLATE (Windows): uncomment, then edit the version and the installer path
                     <div class="release-panel" data-version="1.1.0">
                         <div class="download-card">
                             <div class="download-icon">
@@ -454,14 +471,13 @@ Created: September 28, 2026
                         </div>
                     </div>
                     -->
-                </div>
 
                 <div class="tab-content" id="linux-tab">
                     <div class="version-picker">
                         <label for="linuxVersion">Release version</label>
                         <div class="select-wrap">
                             <select id="linuxVersion" class="version-select">
-                                <option value="1.0.0" selected>v1.0.0 (Latest)</option>
+                                <option value="1.0.0" disabled selected>v1.0.0 (Coming soon)</option>
                                 <!-- FUTURE RELEASE: when v1.1.0 is published, remove "disabled" and "(Coming soon)", then uncomment its release-panel below -->
                                 <option value="1.1.0" disabled>v1.1.0 (Coming soon)</option>
                                 <!-- FUTURE RELEASE: same for v1.2.0 (copy the v1.1.0 release-panel and change the version + link) -->

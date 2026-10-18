@@ -87,16 +87,19 @@ Created: September 28, 2026
                         </div>
                         <div class="carousel-inner" id="carouselInner">
                             <div class="carousel-item active">
-                                <img src="assets/Screenshot_20260920_191433.png" alt="Lau-PyDE Screenshot 1">
+                                <img src="assets/carousel_img1.png" alt="Lau-PyDE Screenshot 1">
                             </div>
                             <div class="carousel-item">
-                                <img src="assets/Screenshot_20260920_191512.png" alt="Lau-PyDE Screenshot 2">
+                                <img src="assets/carousel_img2.png" alt="Lau-PyDE Screenshot 2">
                             </div>
                             <div class="carousel-item">
-                                <img src="assets/Screenshot_20260920_191711.png" alt="Lau-PyDE Screenshot 3">
+                                <img src="assets/carousel_img3.png" alt="Lau-PyDE Screenshot 3">
                             </div>
                             <div class="carousel-item">
-                                <img src="assets/Screenshot_20260920_093237.png" alt="Lau-PyDE Screenshot 4">
+                                <img src="assets/carousel_img4.png" alt="Lau-PyDE Screenshot 4">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="assets/carousel_img5.png" alt="Lau-PyDE Screenshot 5">
                             </div>
                         </div>
                         <button class="carousel-control prev" id="carouselPrev" aria-label="Previous slide">
@@ -403,8 +406,8 @@ Created: September 28, 2026
                         <div class="select-wrap">
                             <select id="windowsVersion" class="version-select">
                                 <option value="1.0.0">v1.0.0 (Old)</option>
-                                <!-- FUTURE RELEASE: when v1.1.0 is published, remove "disabled" and "(Coming soon)", then uncomment its release-panel below -->
-                                <option value="1.1.0" selected>v1.1.0 (Latest)</option>
+                                <option value="1.1.0">v1.1.0</option>
+                                <option value="1.1.1" selected>v1.1.1 (Latest)</option>
                                 <!-- FUTURE RELEASE: same for v1.2.0 (copy the v1.1.0 release-panel and change the version + file path) -->
                                 <option value="1.2.0" disabled>v1.2.0 (Coming soon)</option>
                             </select>
@@ -438,7 +441,7 @@ Created: September 28, 2026
                         </div>
                     </div>
 
-                    <div class="release-panel active" data-version="1.1.0">
+                    <div class="release-panel" data-version="1.1.0">
                         <div class="download-card">
                             <div class="download-icon">
                                 <i class="fab fa-windows"></i>
@@ -449,6 +452,18 @@ Created: September 28, 2026
                             <a href="installer/windows/Lau-PyDE-Setup-v1.1.0.exe" class="btn btn-primary" download>
                                 <i class="fas fa-download"></i>
                                 <span>Download Now</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="release-panel active" data-version="1.1.1">
+                        <div class="download-card">
+                            <div class="download-icon"><i class="fab fa-windows"></i></div>
+                            <h3>Lau-PyDE for Windows</h3>
+                            <span class="version-badge">v1.1.1</span>
+                            <p class="file-type">.exe installer</p>
+                            <a href="installer/windows/Lau-PyDE-Setup-v1.1.1.exe" class="btn btn-primary" download>
+                                <i class="fas fa-download"></i><span>Download Now</span>
                             </a>
                         </div>
                     </div>
@@ -477,9 +492,7 @@ Created: September 28, 2026
                         <label for="linuxVersion">Release version</label>
                         <div class="select-wrap">
                             <select id="linuxVersion" class="version-select">
-                                <option value="1.0.0" disabled selected>v1.0.0 (Coming soon)</option>
-                                <!-- FUTURE RELEASE: when v1.1.0 is published, remove "disabled" and "(Coming soon)", then uncomment its release-panel below -->
-                                <option value="1.1.0" disabled>v1.1.0 (Coming soon)</option>
+                                <option value="1.1.1" selected>v1.1.1 (Latest)</option>
                                 <!-- FUTURE RELEASE: same for v1.2.0 (copy the v1.1.0 release-panel and change the version + link) -->
                                 <option value="1.2.0" disabled>v1.2.0 (Coming soon)</option>
                             </select>
@@ -487,24 +500,40 @@ Created: September 28, 2026
                         </div>
                     </div>
 
-                    <div class="release-panel active" data-version="1.0.0">
+                    <div class="release-panel active" data-version="1.1.1">
                         <div class="download-card">
                             <div class="download-icon">
                                 <i class="fab fa-linux"></i>
                             </div>
                             <h3>Lau-PyDE for Linux</h3>
-                            <span class="version-badge">v1.0.0</span>
-                            <p class="file-info">Source code and instructions</p>
-                            <p>
-                                Linux support is currently not available as a packaged download. While I primarily developed and tested Lau-PyDE on Linux and it's most compatible with my Linux workflow, a packaged Linux download isn't currently provided on this website.
-                            </p>
-                            <p>
-                                Visit the GitHub repository for the latest Linux installation instructions:
-                            </p>
-                            <a href="https://github.com/ryuuufynnn/Lau-PyDE_open-source" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-                                <i class="fab fa-github"></i>
-                                <span>GitHub Repository</span>
-                            </a>
+                            <span class="version-badge">v1.1.1</span>
+                            <p class="file-info">Choose your Linux distribution</p>
+                            <label for="linuxDistro">Distribution</label>
+                            <div class="select-wrap">
+                                <select id="linuxDistro" class="version-select">
+                                    <option value="arch" selected>Arch Linux</option>
+                                    <option value="debian">Ubuntu / Debian</option>
+                                    <option value="fedora">Fedora</option>
+                                    <option value="other">Other distributions</option>
+                                </select>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="distro-download" data-distro="arch">
+                                <p>Download the Arch-specific installer for v1.1.1. An Arch package build is also available in the repository.</p>
+                                <a href="installer/linux/install-arch.sh" class="btn btn-primary" download><i class="fas fa-download"></i><span>Download Linux installer</span></a>
+                            </div>
+                            <div class="distro-download" data-distro="debian" hidden>
+                                <p>Download the Linux installer, then follow the Ubuntu/Debian steps below.</p>
+                                <a href="installer/linux/install-debian.sh" class="btn btn-primary" download><i class="fas fa-download"></i><span>Download Linux installer</span></a>
+                            </div>
+                            <div class="distro-download" data-distro="fedora" hidden>
+                                <p>Download the Linux installer, then follow the Fedora steps below.</p>
+                                <a href="installer/linux/install-fedora.sh" class="btn btn-primary" download><i class="fas fa-download"></i><span>Download Linux installer</span></a>
+                            </div>
+                            <div class="distro-download" data-distro="other" hidden>
+                                <p>Download the Linux installer and use the manual steps below for your distribution.</p>
+                                <a href="installer/linux/install-generic.sh" class="btn btn-primary" download><i class="fas fa-download"></i><span>Download Linux installer</span></a>
+                            </div>
                         </div>
                     </div>
 
@@ -546,6 +575,16 @@ Created: September 28, 2026
                     <li>Create or open a Python project</li>
                     <li>Write Python code</li>
                     <li>Run the file</li>
+                </ol>
+
+                <h4>Linux Steps (v1.1.1):</h4>
+                <ol class="step-list">
+                    <li>Choose Linux and v1.1.1 in the Download section, then select your distribution.</li>
+                    <li>Arch Linux: download the installer and run it, or build the Arch package from <code>installer/arch</code> with <code>makepkg -si</code>.</li>
+                    <li>Ubuntu/Debian or Fedora: download <code>install.sh</code>, open a terminal in its folder, and run <code>chmod +x install.sh &amp;&amp; ./install.sh</code>.</li>
+                    <li>Other distributions: install Python 3, pip, and the required Qt dependencies with your package manager, then run the installer script.</li>
+                    <li>Launch Lau-PyDE with <code>lau-pyde</code> from a terminal or your application menu.</li>
+                    <li>Open a project folder, edit a <code>.py</code> file, and run it from the app.</li>
                 </ol>
 
                 <button class="btn btn-outline guide-toggle" id="guideToggle" type="button" aria-expanded="false" aria-controls="windowsGuide">

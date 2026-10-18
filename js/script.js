@@ -173,13 +173,11 @@ class TypewriterEffect {
         this.text = el.textContent.trim();
         this.typeSpeed = options.typeSpeed || 110;
         this.deleteSpeed = options.deleteSpeed || 60;
-        this.holdFull = options.holdFull || 1800;
-        this.holdEmpty = options.holdEmpty || 500;
+        this.holdFull = options.holdFull || 300;
+        this.holdEmpty = options.holdEmpty || 300;
     }
 
     start() {
-        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-
         let i = 0;
         let deleting = false;
 
@@ -271,13 +269,29 @@ class LogoStory {
 
 class VersionPicker {
     constructor() {
-        document.querySelectorAll('.version-select').forEach(select => {
+        document.querySelectorAll('.version-picker .version-select').forEach(select => {
             select.addEventListener('change', () => {
                 const tab = select.closest('.tab-content');
                 tab.querySelectorAll('.release-panel').forEach(panel => {
                     panel.classList.toggle('active', panel.dataset.version === select.value);
                 });
             });
+        });
+    }
+}
+
+class LinuxDistroPicker {
+    constructor() {
+        this.select = document.getElementById('linuxDistro');
+        this.panels = document.querySelectorAll('.distro-download');
+        if (!this.select) return;
+        this.select.addEventListener('change', () => this.show(this.select.value));
+        this.show(this.select.value);
+    }
+
+    show(distro) {
+        this.panels.forEach(panel => {
+            panel.hidden = panel.dataset.distro !== distro;
         });
     }
 }
@@ -629,6 +643,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Initialize download version picker
     new VersionPicker();
+    new LinuxDistroPicker();
 
     // Initialize detailed install guide toggle
     new GuideToggle();

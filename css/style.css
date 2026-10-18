@@ -30,7 +30,7 @@
     --navbar-height: 70px;
 
     /* Transitions */
-    --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition: 0.6s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-fast: 0.15s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -980,6 +980,14 @@ code {
 .download-card h3 {
     margin-top: 0;
     font-size: 1.5rem;
+}
+
+.distro-download {
+    margin-top: var(--spacing-lg);
+}
+
+.distro-download p {
+    margin: 0 0 var(--spacing-lg);
 }
 
 .file-type, .file-info {
